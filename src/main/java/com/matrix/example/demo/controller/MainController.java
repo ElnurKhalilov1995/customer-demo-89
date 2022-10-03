@@ -42,6 +42,12 @@ public class MainController {
     public String test() {
         return "test";
     }
+
+    @GetMapping("/test2")
+    public String test2() {
+        return "test2";
+    }
+
     @GetMapping("/new")
     public void retail(){
         System.out.println("Hello");
