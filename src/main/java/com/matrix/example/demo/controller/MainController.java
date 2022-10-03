@@ -42,11 +42,4 @@ public class MainController {
     public String test() {
         return "test";
     }
-    @GetMapping("/testNihad")
-    public String nihadTest(){
-        return "Hello Im Nihad";
-
-
-
-    }
 }
