@@ -48,5 +48,8 @@ public class MainController {
         return "test2";
     }
 
-
+    @GetMapping("/new")
+    public void retail(){
+        System.out.println("Hello");
+    }
 }
