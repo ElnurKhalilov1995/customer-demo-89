@@ -32,14 +32,14 @@ public class MainController {
         return "HELLO " + name + "! I am " + age;
     }
 
+    @GetMapping("/hi")
+    public String hi() {
+        return "HI!";
+    }
+
     @PostMapping
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public void addCustomer(@RequestBody CustomerDto customerDto) {
         System.out.println(customerDto);
-    }
-
-    @GetMapping("/test")
-    public String test() {
-        return "test";
     }
 }
