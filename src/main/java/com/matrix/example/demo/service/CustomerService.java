@@ -10,4 +10,5 @@ public interface CustomerService {
 
     void editCustomer(Integer customerId, CustomerEntity customerEntity);
     List<CustomerEntity> findAll(String firstName);
+    CustomerEntity getCustomerById(Integer id);
 }

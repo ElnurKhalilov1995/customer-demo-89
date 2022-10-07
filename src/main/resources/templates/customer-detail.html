@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Detail Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <p th:text="${customer.id}"/>
+    <p th:text="${customer.firstName}"/>
+    <p th:text="${customer.lastName}"/>
+    <p th:text="${customer.age}"/>
+</div>
+</body>
+</html>

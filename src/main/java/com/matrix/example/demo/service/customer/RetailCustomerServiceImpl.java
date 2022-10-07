@@ -39,4 +39,9 @@ public class RetailCustomerServiceImpl implements CustomerService {
     public List<CustomerEntity> findAll(String firstName) {
         return customerRepository.findAll(firstName);
     }
+
+    @Override
+    public CustomerEntity getCustomerById(Integer id) {
+        return customerRepository.findById(id).get();
+    }
 }

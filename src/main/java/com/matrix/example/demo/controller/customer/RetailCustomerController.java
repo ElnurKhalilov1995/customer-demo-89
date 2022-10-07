@@ -1,7 +1,6 @@
 package com.matrix.example.demo.controller.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
-import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
