@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customers</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <table class="table table-bordered">
+        <thead style="background-color: black">
+        <tr>
+            <th style="color: white">Id</th>
+            <th style="color: white">First Name</th>
+            <th style="color: white">Last Name</th>
+            <th style="color: white">Age</th>
+        </tr>
+        </thead>
+        <tbody class="table-striped">
+        <tr th:each="customer : ${customers}">
+            <td th:text="${customer.getId()}">
+            <td th:text="${customer.getFirstName()}">
+            <td th:text="${customer.getLastName()}">
+            <td th:text="${customer.getAge()}">
+            <td>
+            <button class="btn btn-primary" style="color: white"><a th:href="${'/customers/'+ customer.getId()}">Detail</a></button>
+        </td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+
+</body>
+</html>

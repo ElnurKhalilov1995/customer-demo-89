@@ -1,8 +1,7 @@
 package com.matrix.example.demo.controller;
 
 
-import com.matrix.example.demo.config.Operations;
-import com.matrix.example.demo.model.CustomerDto;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -18,11 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/main")
 public class MainController {
-    private final Operations operations;
 
-    public MainController(Operations operations) {
-        this.operations = operations;
-    }
 
     @GetMapping("/hello/{name}/test")
     public String hello(
@@ -32,11 +27,7 @@ public class MainController {
         return "HELLO " + name + "! I am " + age;
     }
 
-    @PostMapping
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public void addCustomer(@RequestBody CustomerDto customerDto) {
-        System.out.println(customerDto);
-    }
+
 
     @GetMapping("/test")
     public String test() {

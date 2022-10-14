@@ -1,11 +1,10 @@
 package com.matrix.example.demo.service.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
-import com.matrix.example.demo.model.CustomerDto;
+import com.matrix.example.demo.dao.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,6 +26,11 @@ public class CompanyCustomerServiceImpl implements CustomerService {
 
     @Override
     public List<CustomerEntity> findAll(String firstName) {
+        return null;
+    }
+
+    @Override
+    public CustomerDto getCustomerById(int id) {
         return null;
     }
 }
