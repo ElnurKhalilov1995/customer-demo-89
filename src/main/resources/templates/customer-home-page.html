@@ -17,14 +17,15 @@
             </tr>
             </thead>
             <tbody class="table-striped">
-                <tr th:each="customer : ${customers}">
-                    <td th:text="${customer.id}" />
-                    <td th:text="${customer.firstName}" />
-                    <td th:text="${customer.lastName}" />
-                    <td th:text="${customer.age}" />
+                <tr th:each="company : ${company}">
+
+                    <td th:text="${company.id}" />
+                    <td th:text="${company.firstName}" />
+                    <td th:text="${company.lastName}" />
+                    <td th:text="${company.age}" />
                     <td>
                         <button class="btn btn-primary">
-                            <a th:href="${'/' + customer.id}">Detail</a>
+                            <a th:href="${'/company/' + company.id}">Detail</a>
                         </button>
                     </td>
                 </tr>

@@ -1,6 +1,7 @@
 package com.matrix.example.demo.controller.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
+import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
@@ -27,10 +28,10 @@ public class RetailCustomerController {
         this.customerService = customerService;
     }
 
-    @GetMapping
-    public List<CustomerEntity> getCustomers() {
-        return customerService.getCustomers();
-    }
+//    @GetMapping
+//    public List<CustomerEntity> getCustomers() {
+//        return customerService.getCustomers();
+//    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
@@ -47,8 +48,10 @@ public class RetailCustomerController {
         customerService.editCustomer(customerId, customerEntity);
     }
 
-    @GetMapping("/search")
-    public List<CustomerEntity> getCustomer(@RequestParam(required = false) String firstName) {
-        return customerService.findAll(firstName);
-    }
+//    @GetMapping("/search")
+//    public List<CustomerEntity> getCustomer(@RequestParam(required = false) String firstName) {
+//        return customerService.findAll(firstName);
+//    }
+
+
 }

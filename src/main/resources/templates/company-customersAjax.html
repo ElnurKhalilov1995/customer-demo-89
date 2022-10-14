@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Customers</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+    <h1>Customer Info</h1>
+    <div>
+        <input type="number" name="id" id="Id" placeholder="id">
+        <input type="text" name="name" id="firstName" placeholder="name">
+        <input type="text" name="lastName" id="lastName" placeholder="lastName">
+        <input type="text" name="age" id="age" placeholder="age">
+        <br>
+        <button id="send-info" class="btn-success">Submit</button>
+
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#send-info').click(function () {
+            let id = $('#Id').val()
+            let firstName = $('#firstName').val()
+            let lastName = $('#lastName').val()
+            let age = $('#age').val()
+
+            let customerData = {}
+            customerData.id = id
+            customerData.firstName = firstName
+            customerData.lastName = lastName
+            customerData.age = age
+
+            $.ajax(
+                {
+                    url: '/company/asa',
+                    type: 'POST',
+                    data: JSON.stringify(customerData),
+                    dataType: 'json',
+                    contentType: "application/json",
+                    success: function (customerData){
+                        console.log('success')
+                        console.log(customerData)
+                        $(`p`).append('success')
+                    }
+                });
+        })
+    })
+</script>
+</body>
+</html>

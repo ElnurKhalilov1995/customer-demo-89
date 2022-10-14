@@ -1,4 +1,4 @@
-package com.matrix.example.demo.dao.repository;
+package com.matrix.example.demo.model.repository;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
 import org.springframework.data.jpa.repository.Query;

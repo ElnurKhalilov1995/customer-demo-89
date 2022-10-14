@@ -1,16 +1,17 @@
 package com.matrix.example.demo.service.customer;
 
 import com.matrix.example.demo.dao.entity.CustomerEntity;
-import com.matrix.example.demo.dao.repository.CustomerRepository;
+import com.matrix.example.demo.model.CustomerDto;
+import com.matrix.example.demo.model.repository.CustomerRepository;
 import com.matrix.example.demo.service.CustomerService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RetailCustomerServiceImpl implements CustomerService {
-    @Value("${pass}")
+
     private String password;
     private CustomerRepository customerRepository;
 
@@ -41,7 +42,7 @@ public class RetailCustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public CustomerEntity getCustomerById(Integer id) {
-        return customerRepository.findById(id).get();
+    public CustomerDto getCustomerById(Integer id) {
+        return null;
     }
 }

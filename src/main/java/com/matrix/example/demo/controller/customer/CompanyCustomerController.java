@@ -5,6 +5,7 @@ import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,11 @@ public class CompanyCustomerController {
     @GetMapping
     public List<CustomerEntity> getCustomers() {
         return customerService.getCustomers();
+    }
+    @GetMapping("/{id}")
+    public CustomerDto getCustomersById (@PathVariable Integer id){
+
+        return customerService.getCustomerById(id);
+
     }
 }
