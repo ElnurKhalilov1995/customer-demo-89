@@ -5,6 +5,7 @@ import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,11 +22,20 @@ import java.util.List;
 @RequestMapping("/retail-customers")
 public class RetailCustomerController {
     private CustomerService customerService;
+    private PasswordEncoder passwordEncoder;
+
 
     public RetailCustomerController(
-            @Qualifier("retailCustomerServiceImpl") CustomerService customerService
+            @Qualifier("retailCustomerServiceImpl") CustomerService customerService,
+            PasswordEncoder passwordEncoder
     ) {
         this.customerService = customerService;
+        this.passwordEncoder = passwordEncoder;
+    }
+
+    @GetMapping("/crypt/{text}")
+    public String cryptPass(@PathVariable String text) {
+        return passwordEncoder.encode(text);
     }
 
     @GetMapping
