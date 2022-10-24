@@ -1,7 +1,7 @@
 package com.matrix.example.demo.controller.customer;
 
+import com.matrix.example.demo.client.model.CustomerDto;
 import com.matrix.example.demo.dao.entity.CustomerEntity;
-import com.matrix.example.demo.model.CustomerDto;
 import com.matrix.example.demo.service.CustomerService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +23,7 @@ public class CompanyCustomerController {
     }
 
     @GetMapping
-    public List<CustomerEntity> getCustomers() {
+    public List<CustomerDto> getCustomers() {
         return customerService.getCustomers();
     }
 }
