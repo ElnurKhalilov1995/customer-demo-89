@@ -27,12 +27,12 @@ public class RetailCustomerMvcController {
         return "customer-home-page";
     }
 
-    @GetMapping("/{id}")
-    public String getCustomerById(
-            Model model,
-            @PathVariable Integer id
-    ) {
-        model.addAttribute("customer", customerService.getCustomerById(id));
-        return "customer-detail";
-    }
+//    @GetMapping("/{id}")
+//    public String getCustomerById(
+//            Model model,
+//            @PathVariable Integer id
+//    ) {
+//        model.addAttribute("customer", customerService.getCustomerById(id));
+//        return "customer-detail";
+//    }
 }
